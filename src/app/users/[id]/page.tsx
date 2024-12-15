@@ -10,7 +10,7 @@ type Params = {
   id: number;
 };
 
-const UserDetailPage = async ({ params }: { params: Params }) => {
+const UserDetailPage = async ({ params }: { params: Promise<Params> }) => {
   const { id } = await params;
   const cookieStore = await cookies();
   const authToken = cookieStore.get("authToken");
@@ -27,11 +27,17 @@ const UserDetailPage = async ({ params }: { params: Params }) => {
     }
 
     userData = await users.getUser(id);
-    postsData = await posts.getPostsByUser(id, {
+    const response = await posts.getPostsByUser(id, {
       headers: {
         Authorization: `Bearer ${authToken.value}`,
       },
     });
+
+    if (Array.isArray(response)) {
+      postsData = response;
+    } else {
+      throw new Error(response.message);
+    }
   } catch (error) {
     console.error("ユーザーの取得に失敗しました:", error);
     const errorMessage = (error as CustomError).error.message;

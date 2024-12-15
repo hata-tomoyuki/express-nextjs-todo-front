@@ -8,7 +8,7 @@ type Params = {
   id: number;
 };
 
-const PostEditPage = async ({ params }: { params: Params }) => {
+const PostEditPage = async ({ params }: { params: Promise<Params> }) => {
   const { id } = await params;
 
   const cookieStore = await cookies();

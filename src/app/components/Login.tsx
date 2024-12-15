@@ -36,7 +36,7 @@ export const Login = () => {
     const users = createUsersInstance();
     try {
       const response = await users.loginUser({ ...data });
-      if (response) {
+      if (response && response.token && response.userId !== undefined) {
         login(response.token, response.userId);
         alert("ログインが成功しました！");
         router.push("/");

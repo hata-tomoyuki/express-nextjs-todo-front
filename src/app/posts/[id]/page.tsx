@@ -9,7 +9,7 @@ type Params = {
   id: number;
 };
 
-export const PostDetailPage = async ({ params }: { params: Params }) => {
+const PostDetailPage = async ({ params }: { params: Promise<Params> }) => {
   const { id } = await params;
 
   const cookieStore = await cookies();
