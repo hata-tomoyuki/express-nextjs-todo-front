@@ -14,7 +14,7 @@ export const PostList = ({ posts, isAuthenticated }: PostListProps) => {
 
   return (
     <>
-      {visiblePosts.length === 0 && <p>投稿がありません</p>}
+      {visiblePosts.length === 0 && <p>公開中の投稿はありません</p>}
       {visiblePosts.map((post) => (
         <Post key={post.id} post={post} />
       ))}
