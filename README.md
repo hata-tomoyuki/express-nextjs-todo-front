@@ -1,37 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Frontend Project
 
-## Getting Started
+このプロジェクトは、Next.jsとExpressを使用したTodoアプリ作成課題のフロントエンド構築例です。
+以下にプロジェクトのセットアップ、構成、および使用方法について説明します。
 
-First, run the development server:
+## 目次
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. [プロジェクトのセットアップ](#プロジェクトのセットアップ)
+2. [ディレクトリ構造](#ディレクトリ構造)
+3. [主要な設定ファイル](#主要な設定ファイル)
+4. [スクリプト](#スクリプト)
+5. [環境変数](#環境変数)
+6. [開発](#開発)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## プロジェクトのセットアップ
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+このプロジェクトをローカルで実行するには、以下の手順に従ってください。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. リポジトリをクローンします。
 
-## Learn More
+   ```bash
+   git clone <https://github.com/hata-tomoyuki/express-nextjs-todo-front.git>
+   cd frontend
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. 必要な依存関係をインストールします。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. 開発サーバーを起動します。
 
-## Deploy on Vercel
+   ```bash
+   npm run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ディレクトリ構造
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# express-nextjs-todo-front
+- `src/app`: アプリケーションの主要なコンポーネントとページが含まれています。
+- `src/utils`: ユーティリティ関数やサービスが含まれています。
+- `src/types`: TypeScriptの型定義が含まれています。
+
+## 主要な設定ファイル
+
+- `.eslintrc.json`: ESLintの設定ファイルです。コードの品質とスタイルを維持するために使用されます。
+- `.gitignore`: Gitで追跡しないファイルやディレクトリを指定します。
+- `package.json`: プロジェクトの依存関係とスクリプトが定義されています。
+
+## スクリプト
+
+- `npm run dev`: 開発サーバーを起動します。
+- `npm run build`: プロジェクトをビルドします。
+- `npm run start`: ビルドされたプロジェクトを起動します。
+- `npm run lint`: コードのリントを実行します。
+- `npm run lint:fix`: コードのリントとフォーマットを実行します。
+
+## 環境変数
+
+環境変数は`.env`ファイルに定義されており、プロジェクトの設定に使用されます。`.env.example`を参考にして、必要な変数を設定してください。
+
+## 開発
+
+開発中は、`npm run dev`を使用してローカルサーバーを起動し、変更をリアルタイムで確認できます。
+バックエンド<https://github.com/hata-tomoyuki/express-nextjs-todo-back>でExpressアプリとMySQLを起動してから、フロントエンドを起動してください。
+
